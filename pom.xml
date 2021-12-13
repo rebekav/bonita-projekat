@@ -5,7 +5,7 @@
   <groupId>com.company</groupId>
   <artifactId>invertovana-aukcija</artifactId>
   <version>0.0.1</version>
-  <name>Invertovana aukcija</name>
+  <name>bonita-projekat</name>
   <description>projekat iz bonite za 2021</description>
   <properties>
     <bonita.runtime.version>7.13.0</bonita.runtime.version>
@@ -92,6 +92,12 @@
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-servlet</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.company.model</groupId>
+      <artifactId>bdm-client</artifactId>
+      <version>1.0.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
