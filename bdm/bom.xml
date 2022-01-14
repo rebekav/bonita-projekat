@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.13.0">
     <businessObjects>
-        <businessObject qualifiedName="com.company.model.AgentFirme">
+        <businessObject qualifiedName="com.company.model.AgentKompanije">
             <fields>
                 <field type="STRING" length="255" name="odgovorNaZahtev" nullable="true" collection="false"/>
             </fields>
@@ -28,8 +28,8 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.Kompanija">
             <fields>
-                <field type="FLOAT" length="255" name="id" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.AgentFirme" fetchType="LAZY" name="agent" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.AgentKompanije" fetchType="LAZY" name="agent" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="ime" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -38,7 +38,7 @@
         <businessObject qualifiedName="com.company.model.Ocena">
             <fields>
                 <field type="STRING" length="255" name="ocenaKlijenta" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="odenaFirme" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="odenaKompanije" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -48,30 +48,16 @@
             <fields>
                 <field type="BOOLEAN" length="255" name="odobreno" nullable="false" collection="false"/>
                 <field type="LOCALDATE" length="255" name="pocetakRadova" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="ponovnoTrazenje" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
             <indexes/>
         </businessObject>
-        <businessObject qualifiedName="com.company.model.Registracija">
+        <businessObject qualifiedName="com.company.model.Ponuda">
             <fields>
-                <field type="STRING" length="255" name="ime" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="email" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="username" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="adresa" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="mesto" nullable="false" collection="false"/>
-                <field type="INTEGER" length="255" name="postanskiBr" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.VrstaKorisnika" fetchType="LAZY" name="vrstaKorisnika" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="sifra" nullable="false" collection="false"/>
-            </fields>
-            <uniqueConstraints/>
-            <queries/>
-            <indexes/>
-        </businessObject>
-        <businessObject qualifiedName="com.company.model.VrstaKorisnika">
-            <fields>
-                <field type="STRING" length="255" name="korisnik" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="firma" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="idZahteva" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idKompanije" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
