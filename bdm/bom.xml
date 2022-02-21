@@ -4,6 +4,7 @@
         <businessObject qualifiedName="com.company.model.AgentKompanije">
             <fields>
                 <field type="STRING" length="255" name="odgovorNaZahtev" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Kompanija" fetchType="LAZY" name="kompanijaKojaOdgovara" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -26,9 +27,24 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.Klijent">
+            <fields>
+                <field type="STRING" length="255" name="ime" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="prezime" nullable="true" collection="false">
+                    <description>	</description>
+                </field>
+                <field type="STRING" length="255" name="username" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="password" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="adresa" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="kompanija" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Kompanija">
             <fields>
-                <relationField type="AGGREGATION" reference="com.company.model.AgentKompanije" fetchType="LAZY" name="agent" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Klijent" fetchType="LAZY" name="agent" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="ime" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
@@ -49,6 +65,7 @@
                 <field type="BOOLEAN" length="255" name="odobreno" nullable="false" collection="false"/>
                 <field type="LOCALDATE" length="255" name="pocetakRadova" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="ponovnoTrazenje" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Klijent" fetchType="LAZY" name="klijent" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -58,6 +75,15 @@
             <fields>
                 <field type="STRING" length="255" name="idZahteva" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="idKompanije" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Registracija">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Kompanija" fetchType="LAZY" name="kompanija" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Klijent" fetchType="LAZY" name="klijent" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

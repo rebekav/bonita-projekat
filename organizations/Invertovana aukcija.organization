@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="Invertovana aukcija">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="igorigor">
+      <firstName>Igor</firstName>
+      <lastName>Milakovic</lastName>
+      <title>Mr</title>
+      <jobTitle>Fizicko lice</jobTitle>
+      <manager></manager>
+      <personalData>
+        <email></email>
+      </personalData>
+      <professionalData>
+        <email>igor@mail.com</email>
+        <phoneNumber>123-123-123</phoneNumber>
+        <mobileNumber>321-321-321</mobileNumber>
+        <building>A</building>
+        <room>1</room>
+        <address>Svetozara Miletica</address>
+        <zipCode>21000</zipCode>
+        <city>Novi Sad</city>
+        <country>Serbia</country>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="bekabeka">
+      <firstName>Rebeka</firstName>
+      <lastName>Vujcin</lastName>
+      <title>Ms</title>
+      <jobTitle>Agent Kompanije</jobTitle>
+      <personalData/>
+      <professionalData>
+        <email>mila@mail.com</email>
+        <phoneNumber>111-22-33</phoneNumber>
+        <mobileNumber>33-66-55</mobileNumber>
+        <building>N</building>
+        <room>5</room>
+        <address>Lole Ribara </address>
+        <zipCode>21000</zipCode>
+        <city>Novi Sad</city>
+        <country>Serbia</country>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="milamila">
+      <firstName>MIla</firstName>
+      <lastName>Milovic</lastName>
+      <title>Ms</title>
+      <jobTitle>Agent Kompanije</jobTitle>
+      <personalData/>
+      <professionalData>
+        <email>mila@mail.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Agent Kompanije">
+      <displayName>Agent Kompanije</displayName>
+    </role>
+    <role name="Fizicko lice">
+      <displayName>Fizicko lice</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Aukcija">
+      <displayName>Aukcija</displayName>
+    </group>
+    <group name="Klijenti" parentPath="/Aukcija">
+      <displayName>Klijenti</displayName>
+    </group>
+    <group name="Fizicko lice" parentPath="/Aukcija/Klijenti">
+      <displayName>Fizicko lice</displayName>
+    </group>
+    <group name="Kompanije" parentPath="/Aukcija/Klijenti">
+      <displayName>Kompanije</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>igorigor</userName>
+      <roleName>Fizicko lice</roleName>
+      <groupName>Aukcija</groupName>
+    </membership>
+    <membership>
+      <userName>bekabeka</userName>
+      <roleName>Agent Kompanije</roleName>
+      <groupName>Aukcija</groupName>
+    </membership>
+    <membership>
+      <userName>milamila</userName>
+      <roleName>Agent Kompanije</roleName>
+      <groupName>Aukcija</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
